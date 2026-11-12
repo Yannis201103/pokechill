@@ -4043,6 +4043,7 @@ pkmn.mewtwo = {
         sdef: 90,
         spe: 130,
     },
+    hiddenAbility: ability.strategist,
     evolve: function() { return { 1: { pkmn: pkmn.megaMewtwoX, item: item.mewtwoniteX } } },
     lore: `Shaped by human hands, bears the weight of creation twisted. Though it carries the memory of life that came before, it walks a path apart, questioning the bounds of its own existence.`
 }
@@ -6071,6 +6072,7 @@ pkmn.lugia = {
         sdef: 154,
         spe: 110,
     },
+    hiddenAbility: ability.multiscale,
     signature: move.aeroblast
 }
 
@@ -8481,6 +8483,7 @@ pkmn.kyogre = {
         spe: 90,
     },
     hiddenAbility: ability.drizzle,
+    signature: move.originPulse,
     lore: `A reminder of the power that once carved the seas. Its ancient rivalry with Groudon lingers quietly, a balance written into the land and water.`
 }
 
@@ -8494,6 +8497,7 @@ pkmn.kyogrePrimal = {
         sdef: 160,
         spe: 90,
     },
+    signature: move.originPulse,
     lore: `The oceans made visible, and the force that first shaped the seas across the world. Waves rise and storms gather at its will.`
 }
 
@@ -8509,6 +8513,7 @@ pkmn.groudon = {
         spe: 90,
     },
     hiddenAbility: ability.drought,
+    signature: move.precipiceBlades,
     lore: `A reminder of the power that once carved the lands. Its ancient rivalry with Kyogre lingers quietly, a balance written into the land and water.`
 
 }
@@ -8523,6 +8528,7 @@ pkmn.groudonPrimal = {
         sdef: 90,
         spe: 90,
     },
+    signature: move.precipiceBlades,
     lore: `The continents made whole, and the force that first shaped the land across the world. Mountains rise and deserts stretch at its will.`
 }
 
@@ -8537,6 +8543,8 @@ pkmn.rayquaza = {
         sdef: 90,
         spe: 95,
     },
+    hiddenAbility: ability.airLock,
+    signature : move.dragonAscent,
     lore: `The force that watches over the world from above. It tempers the chaos of the seas and the land, acting as a mediator between Kyogre and Groudon. The winds and currents obey its passage, and it stands as guardian of the skies.`
 }
 
@@ -8550,6 +8558,8 @@ pkmn.megaRayquaza = {
         sdef: 120,
         spe: 115,
     },
+    hiddenAbility: ability.airLock,
+    signature : move.dragonAscent,
     lore: `Ascending the atmosphere, its reach extending into the upper skies. Protecting not only the world below but the space above, guarding against threats from beyond.`
 }
 
@@ -9953,6 +9963,7 @@ pkmn.dialga = {
         spe: 90,
     },
     signature : move.roarOfTime,
+    hiddenAbility: ability.supremeOverlord,
     lore: `Bound by weight and limit, a shape time itself can endure. Its power yet governs past and future, though restrained, for the world cannot withstand the full measure of eternity given form.`
 }
 
@@ -10067,6 +10078,7 @@ pkmn.giratinaOrigin = {
         sdef: 100,
         spe: 160,
     },
+    hiddenAbility: ability.leviate,
     lore: `Shaped by the Original One, when the laws of creation first took form, It was born in defiance of them. Given dominion over antithesis of matter, It was cast away for its violence, bound to a world where logic collapses and direction has no meaning.`
 }
 
@@ -12895,7 +12907,8 @@ pkmn.cobalion = {
     sdef: 72,
     spe: 108,
   },
-    hiddenAbility: ability.fullMetalBody,
+  signature : move.sacredSword,
+    hiddenAbility: ability.justified,
 }
 
 // 639 Terrakion
@@ -12909,6 +12922,8 @@ pkmn.terrakion = {
     sdef: 90,
     spe: 108,
   },
+  signature : move.sacredSword,
+  hiddenAbility: ability.justified,
 }
 
 // 640 Virizion
@@ -12922,7 +12937,8 @@ pkmn.virizion = {
     sdef: 129,
     spe: 108,
   },
-    hiddenAbility: ability.stamina,
+  signature : move.sacredSword,
+    hiddenAbility: ability.justified,
 }
 
 // 641 Tornadus
@@ -12937,6 +12953,7 @@ pkmn.tornadus = {
     spe: 111,
   },
     hiddenAbility: ability.climaTact,
+    signature : move.bleakwindStorm
 }
 
 pkmn.tornadusTherian = {
@@ -12963,6 +12980,7 @@ pkmn.thundurus = {
     spe: 111,
   },
     hiddenAbility: ability.climaTact,
+    signature : move.wildboltStorm
 }
 
 pkmn.thundurusTherian = {
@@ -13042,6 +13060,7 @@ pkmn.reshiram = {
     sdef: 120,
     spe: 90,
   },
+  hiddenAbility: ability.teravolt,
     signature : move.blueFlare
 }
 
@@ -13056,6 +13075,7 @@ pkmn.zekrom = {
     sdef: 100,
     spe: 90,
   },
+  hiddenAbility: ability.teravolt,
     signature : move.boltStrike
 }
 
@@ -13084,7 +13104,9 @@ pkmn.kyuremBlack = {
         satk: 120,
         sdef: 90,
         spe: 110,
-    }
+    },
+    hiddenAbility: ability.teravolt,
+    signature : move.glaciate
 }
 
 pkmn.kyuremWhite = {
@@ -13096,7 +13118,9 @@ pkmn.kyuremWhite = {
         satk: 180,
         sdef: 100,
         spe: 110,
-    }
+    },
+    hiddenAbility: ability.turboblaze,
+    signature : move.glaciate
 }
 
 // 647 Keldeo
@@ -14903,7 +14927,9 @@ pkmn.xerneas = {
         satk: 131,
         sdef: 98,
         spe: 99,
-    }
+    },
+    signature : move.geomancy,
+    hiddenAbility: ability.fairyGuard,
 }
 
 // 717 Yveltal
@@ -20242,4 +20268,3 @@ ribbon.smile ={
     name: `Smile Ribbon`,
     description: `Awarded very rarely for spending a lot of time together`
 }
-

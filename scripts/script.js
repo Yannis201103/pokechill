@@ -247,6 +247,14 @@ document.getElementById("settings-alternate-rotation").addEventListener("change"
   saved.alternateWildRotation = document.getElementById(`settings-alternate-rotation`).value
 });
 
+document.getElementById("settings-event-rotation").addEventListener("change", e => {
+  saved.eventRotationOverride = document.getElementById("settings-event-rotation").value;
+  getSeed();
+  setEventAreas();
+  updateItemShop();
+  saveGame();
+});
+
 function changeTheme(){
 
   let theme = saved.theme
@@ -918,6 +926,7 @@ function updateSettings(alt){
 
   if (saved.hideGotPkmn == "true") {document.getElementById("settings-hide-got").value = "true"} else document.getElementById("settings-hide-got").value = "false"
   if (saved.alternateWildRotation == "true") {document.getElementById("settings-alternate-rotation").value = "true"} else document.getElementById("settings-alternate-rotation").value = "false"
+  document.getElementById("settings-event-rotation").value = saved.eventRotationOverride || "auto"
 
 
   if (document.getElementById("tooltip-modifiers-list")) {

@@ -1019,6 +1019,26 @@ ability.snowWarning = {
     rarity: 3,
 }
 
+ability.teravolt = {
+    info: function() {return `Moves can be used regardless of the target's abilities`},
+    rarity: 3,
+}
+
+ability.turboblaze = {
+    info: function() {return `Moves can be used regardless of the target's abilities`},
+    rarity: 3,
+}
+
+ability.airLock = {
+    info: function() {return `Suppresses the effects of weather while this Pokemon is in battle`},
+    rarity: 3,
+}
+
+ability.deltaStream = {
+    info: function() {return `Weakens super-effective moves against Flying-type Pokemon while this Pokemon is in battle`},
+    rarity: 3,
+}
+
 ability.somberField = {
     info: function() {return `Changes the weather to ${tagFoggy} when entering or switching into the battle`},
     rarity: 3,
@@ -1752,6 +1772,16 @@ move.thunder = {
     info: function() {return `Attacks x1.2 slower than usual`} ,
 }
 
+move.wildboltStorm = {
+    moveset: [`electric`],
+    split: "special",
+    rarity: 3,
+    type: "electric",
+    power: 100,
+    info: function() {return `20% chance to inflict ${tagParalysis}`},
+    hitEffect: function(target) { if (rng(0.20)) moveBuff(target,'paralysis') },
+}
+
 move.voltSwitch = {
     moveset: [`electric`],
     split: "special",
@@ -1863,6 +1893,16 @@ move.earthquake = {
     rarity: 3,
     type: "ground",
     power: 100
+}
+
+move.precipiceBlades = {
+    moveset: [`ground`],
+    split: "physical",
+    rarity: 3,
+    type: "ground",
+    power: 120,
+    timer: defaultPlayerMoveTimer*1.2,
+    info: function() {return `Attacks x1.2 slower than usual`},
 }
 
 move.dig = {
@@ -2154,6 +2194,17 @@ move.hurricane = {
     power: 100,
     info: function() {return `10% chance to inflict ${tagConfused}`},
     hitEffect: function(target) { if (rng(0.10)) moveBuff(target,'confused') },
+    affectedBy: [ability.windRider.id]
+}
+
+move.bleakwindStorm = {
+    moveset: [`flying`],
+    split: "special",
+    rarity: 3,
+    type: "flying",
+    power: 100,
+    info: function() {return `30% chance to decrease enemy Speed by 50%`},
+    hitEffect: function(target) { if (rng(0.30)) moveBuff(target,'spedown1') },
     affectedBy: [ability.windRider.id]
 }
 
@@ -2816,6 +2867,14 @@ move.surf = {
     power: 90
 }
 
+move.originPulse = {
+    moveset: [`water`],
+    split: "special",
+    rarity: 3,
+    type: "water",
+    power: 110,
+}
+
 move.muddyWater = {  
     moveset: [`ground`],
     split: "special",
@@ -3148,6 +3207,14 @@ move.bulkUp = {
 }
 
 move.crossChop = {
+    moveset: [`fighting`],
+    split: "physical",
+    rarity: 3,
+    type: "fighting",
+    power: 90
+}
+
+move.sacredSword = {
     moveset: [`fighting`],
     split: "physical",
     rarity: 3,
@@ -4071,6 +4138,22 @@ move.lightScreen = {
     info: function() {return `Changes the weather to ${tagLightScreen}`} ,
     hitEffect: function(target) { changeWeather("lightScreen") },
     notUsableByEnemy: true,
+}
+
+move.geomancy = {
+    moveset: [`fairy`],
+    split: "special",
+    rarity: 3,
+    type: "fairy",
+    power: 0,
+    timer: defaultPlayerMoveTimer*2,
+    info: function() {return `Increases Special Attack, Special Defense, and Speed by 100%. Attacks x2 slower than usual`},
+    hitEffect: function(target) {
+        moveBuff(target,'satkup2',"self");
+        moveBuff(target,'sdefup2',"self");
+        moveBuff(target,'speup2',"self");
+    },
+    restricted: true,
 }
 
 move.magicalTorque = {  //new
@@ -5461,5 +5544,3 @@ for (const i in move){
     move[i].id = i
     if (move[i].timer == undefined) move[i].timer = defaultPlayerMoveTimer
 }
-
-

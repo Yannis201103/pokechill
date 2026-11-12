@@ -3747,8 +3747,8 @@ function exploreCombatWild() {
         let typeMultiplier = typeEffectiveness(move[nextMoveWild].type, pkmn[team[exploreActiveMember].pkmn.id].type)
 
         //numbers fresh out of my ass idk
-        if (typeMultiplier==1.5 && testAbility(`active`,  ability.filter.id ) ) typeMultiplier = 1.25
-        if (typeMultiplier==2.25 && testAbility(`active`,  ability.filter.id ) ) typeMultiplier = 1.65
+        if (typeMultiplier==1.5 && testDefendingAbility(ability.filter.id)) typeMultiplier = 1.25
+        if (typeMultiplier==2.25 && testDefendingAbility(ability.filter.id)) typeMultiplier = 1.65
         
         if (typeMultiplier>1 && move[nextMoveWild].power>0 && testAbility(`active`,  ability.angerPoint.id ) ) moveBuff("wild",'atkup2',"self")
         if (typeMultiplier>1 && move[nextMoveWild].power>0 && testAbility(`active`,  ability.justified.id ) ) moveBuff("wild",'satkup2',"self")
@@ -3756,7 +3756,7 @@ function exploreCombatWild() {
 
 
         if (saved.weatherTimer>0 && saved.weather=="lightScreen" && typeMultiplier>1) typeMultiplier = 1
-        if (testAbility(`active`,  ability.shieldsDown.id ) && typeMultiplier>1) typeMultiplier = 1
+        if (testDefendingAbility(ability.shieldsDown.id) && typeMultiplier>1) typeMultiplier = 1
 
 
 
@@ -3798,45 +3798,45 @@ function exploreCombatWild() {
 
 
         //abilities
-        if (testAbility(`active`,  ability.grabGuard.id ) && move[nextMoveWild].type == 'fighting') totalPower /= 2
-        if (testAbility(`active`,  ability.waterGuard.id ) && move[nextMoveWild].type == 'water') totalPower /= 2
-        if (testAbility(`active`,  ability.flameGuard.id ) && move[nextMoveWild].type == 'fire') totalPower /= 2
-        if (testAbility(`active`,  ability.curseGuard.id ) && move[nextMoveWild].type == 'ghost') totalPower /= 2
-        if (testAbility(`active`,  ability.poisonGuard.id ) && move[nextMoveWild].type == 'poison') totalPower /= 2
-        if (testAbility(`active`,  ability.iceGuard.id ) && move[nextMoveWild].type == 'ice') totalPower /= 2
-        if (testAbility(`active`,  ability.psychicGuard.id ) && move[nextMoveWild].type == 'psychic') totalPower /= 2
-        if (testAbility(`active`,  ability.fairyGuard.id ) && move[nextMoveWild].type == 'fairy') totalPower /= 2
-        if (testAbility(`active`,  ability.leafGuard.id ) && move[nextMoveWild].type == 'grass') totalPower /= 2
-        if (testAbility(`active`,  ability.plainGuard.id ) && move[nextMoveWild].type == 'normal') totalPower /= 2
-        if (testAbility(`active`,  ability.sinisterGuard.id ) && move[nextMoveWild].type == 'dark') totalPower /= 2
-        if (testAbility(`active`,  ability.steelGuard.id ) && move[nextMoveWild].type == 'steel') totalPower /= 2
-        if (testAbility(`active`,  ability.dragonGuard.id ) && move[nextMoveWild].type == 'dragon') totalPower /= 2
-        if (testAbility(`active`,  ability.rockGuard.id ) && move[nextMoveWild].type == 'rock') totalPower /= 2
-        if (testAbility(`active`,  ability.groundGuard.id ) && move[nextMoveWild].type == 'ground') totalPower /= 2
-        if (testAbility(`active`,  ability.flyingGuard.id ) && move[nextMoveWild].type == 'flying') totalPower /= 2
+        if (testDefendingAbility(ability.grabGuard.id) && move[nextMoveWild].type == 'fighting') totalPower /= 2
+        if (testDefendingAbility(ability.waterGuard.id) && move[nextMoveWild].type == 'water') totalPower /= 2
+        if (testDefendingAbility(ability.flameGuard.id) && move[nextMoveWild].type == 'fire') totalPower /= 2
+        if (testDefendingAbility(ability.curseGuard.id) && move[nextMoveWild].type == 'ghost') totalPower /= 2
+        if (testDefendingAbility(ability.poisonGuard.id) && move[nextMoveWild].type == 'poison') totalPower /= 2
+        if (testDefendingAbility(ability.iceGuard.id) && move[nextMoveWild].type == 'ice') totalPower /= 2
+        if (testDefendingAbility(ability.psychicGuard.id) && move[nextMoveWild].type == 'psychic') totalPower /= 2
+        if (testDefendingAbility(ability.fairyGuard.id) && move[nextMoveWild].type == 'fairy') totalPower /= 2
+        if (testDefendingAbility(ability.leafGuard.id) && move[nextMoveWild].type == 'grass') totalPower /= 2
+        if (testDefendingAbility(ability.plainGuard.id) && move[nextMoveWild].type == 'normal') totalPower /= 2
+        if (testDefendingAbility(ability.sinisterGuard.id) && move[nextMoveWild].type == 'dark') totalPower /= 2
+        if (testDefendingAbility(ability.steelGuard.id) && move[nextMoveWild].type == 'steel') totalPower /= 2
+        if (testDefendingAbility(ability.dragonGuard.id) && move[nextMoveWild].type == 'dragon') totalPower /= 2
+        if (testDefendingAbility(ability.rockGuard.id) && move[nextMoveWild].type == 'rock') totalPower /= 2
+        if (testDefendingAbility(ability.groundGuard.id) && move[nextMoveWild].type == 'ground') totalPower /= 2
+        if (testDefendingAbility(ability.flyingGuard.id) && move[nextMoveWild].type == 'flying') totalPower /= 2
 
         let nullified = false
 
-        if (testAbility(`active`,  ability.voltAbsorb.id  )&& move[nextMoveWild].type == 'electric') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.waterAbsorb.id ) && move[nextMoveWild].type == 'water') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.flareAbsorb.id ) && move[nextMoveWild].type == 'fire') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.curseAbsorb.id  )&& move[nextMoveWild].type == 'ghost') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.poisonAbsorb.id  )&& move[nextMoveWild].type == 'poison') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.frostAbsorb.id  )&& move[nextMoveWild].type == 'ice') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.psychicAbsorb.id  )&& move[nextMoveWild].type == 'psychic') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.lightAbsorb.id  )&& move[nextMoveWild].type == 'fairy') {totalPower = 0; nullified = true}
-        if (testAbility(`active`,  ability.growthAbsorb.id  )&& move[nextMoveWild].type == 'grass') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.voltAbsorb.id) && move[nextMoveWild].type == 'electric') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.waterAbsorb.id) && move[nextMoveWild].type == 'water') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.flareAbsorb.id) && move[nextMoveWild].type == 'fire') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.curseAbsorb.id) && move[nextMoveWild].type == 'ghost') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.poisonAbsorb.id) && move[nextMoveWild].type == 'poison') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.frostAbsorb.id) && move[nextMoveWild].type == 'ice') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.psychicAbsorb.id) && move[nextMoveWild].type == 'psychic') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.lightAbsorb.id) && move[nextMoveWild].type == 'fairy') {totalPower = 0; nullified = true}
+        if (testDefendingAbility(ability.growthAbsorb.id) && move[nextMoveWild].type == 'grass') {totalPower = 0; nullified = true}
 
 
-        if (testAbility(`active`,  ability.flashElectro.id  )&& move[nextMoveWild].type == 'electric') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashAqua.id ) && move[nextMoveWild].type == 'water') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashPyro.id ) && move[nextMoveWild].type == 'fire') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashUmbra.id  )&& move[nextMoveWild].type == 'ghost') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashVenum.id  )&& move[nextMoveWild].type == 'poison') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashCryo.id  )&& move[nextMoveWild].type == 'ice') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashPsycha.id  )&& move[nextMoveWild].type == 'psychic') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashFae.id  )&& move[nextMoveWild].type == 'fairy') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
-        if (testAbility(`active`,  ability.flashHerba.id  )&& move[nextMoveWild].type == 'grass') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashElectro.id) && move[nextMoveWild].type == 'electric') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashAqua.id) && move[nextMoveWild].type == 'water') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashPyro.id) && move[nextMoveWild].type == 'fire') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashUmbra.id) && move[nextMoveWild].type == 'ghost') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashVenum.id) && move[nextMoveWild].type == 'poison') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashCryo.id) && move[nextMoveWild].type == 'ice') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashPsycha.id) && move[nextMoveWild].type == 'psychic') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashFae.id) && move[nextMoveWild].type == 'fairy') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
+        if (testDefendingAbility(ability.flashHerba.id) && move[nextMoveWild].type == 'grass') {totalPower = 0; moveBuff("wild",'speup1',"self"); nullified = true}
 
         if (testAbility(`active`,  ability.static.id ) && rng(0.15)) moveBuff("wild","paralysis")
         if (testAbility(`active`,  ability.flameBody.id ) && rng(0.15)) moveBuff("wild","burn")
@@ -3848,10 +3848,10 @@ function exploreCombatWild() {
         if (testAbility(`active`,  ability.gooey.id )) moveBuff("wild","spedown1")
 
         const below50hp = pkmn[team[exploreActiveMember].pkmn.id]?.playerHp < (pkmn[team[exploreActiveMember].pkmn.id]?.playerHpMax * 0.5);
-        if (!below50hp && testAbility(`active`,  ability.multiscale.id )) totalPower /= 2
+        if (!below50hp && testDefendingAbility(ability.multiscale.id)) totalPower /= 2
 
-        if (testAbility(`active`,  ability.levitate.id ) && move[nextMoveWild].type==="ground") totalPower = 0
-        if (testAbility(`active`,  ability.thickFat.id ) && (move[nextMoveWild].type==="fire" || move[nextMoveWild].type==="ice") ) totalPower /= 2
+        if (testDefendingAbility(ability.levitate.id) && move[nextMoveWild].type==="ground") totalPower = 0
+        if (testDefendingAbility(ability.thickFat.id) && (move[nextMoveWild].type==="fire" || move[nextMoveWild].type==="ice")) totalPower /= 2
 
         for (const slot in team){
             if (testAbility(slot, ability.purifyingSalt.id) && move[nextMoveWild].type == 'ghost' ) totalPower /= 1.25
@@ -3882,7 +3882,7 @@ function exploreCombatWild() {
 
 
 
-        if (testAbility(`active`,  ability.wonderGuard.id) && typeMultiplier<=1) totalPower*=0.2
+        if (testDefendingAbility(ability.wonderGuard.id) && typeMultiplier<=1) totalPower*=0.2
 
 
 
@@ -4758,6 +4758,10 @@ function getSeed() {
 
   const period = Math.floor(dayNumber / 3);
   rotationEventCurrent = ((period-3) % rotationEventMax) + 1;
+  const eventRotationOverride = Number(saved.eventRotationOverride);
+  if (Number.isInteger(eventRotationOverride) && eventRotationOverride >= 1 && eventRotationOverride <= rotationEventMax) {
+    rotationEventCurrent = eventRotationOverride;
+  }
   rotationFrontierCurrent = (period % rotationFrontierMax) + 1;
   rotationDimensionCurrent = (period % rotationDimensionMax) + 1;
 
@@ -4792,6 +4796,7 @@ function updateDailyCounters() {
   contadores.forEach(c => {
     c.textContent = `${horas}:${minutos}:${segundos}`;
   });
+
 }
 
 let lastEventPeriod = Math.floor(
@@ -4808,9 +4813,11 @@ function updateEventCounters() {
   if (currentPeriod !== lastEventPeriod) {
     lastEventPeriod = currentPeriod;
 
+    const previousDimensionRotation = rotationDimensionCurrent;
     getSeed();
     setEventAreas();
     updateItemShop();
+    if (rotationDimensionCurrent !== previousDimensionRotation) updateMegaDimension();
 
   }
 
@@ -9541,6 +9548,15 @@ function debugGetItems(){
 }
 
 
+
+function testDefendingAbility(id) {
+    const attacker = pkmn[saved.currentPkmn];
+    const abilityOverrideIds = [ability.teravolt.id, ability.turboblaze.id];
+    const attackerAbilities = [attacker?.ability, attacker?.hiddenAbility?.id, attacker?.abilityTemp];
+
+    if (abilityOverrideIds.some(overrideId => attackerAbilities.includes(overrideId))) return false;
+    return testAbility("active", id);
+}
 
 function testAbility(target,id){
 
