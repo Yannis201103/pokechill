@@ -6446,6 +6446,113 @@ areas.dimensionXerneas = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+areas.dimensionYveltal = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.yveltal,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.yveltal,
+        slot1Moves : [move.nightSlash.id,move.oblivionWing.id, move.focusBlast.id, move.thunder.id],
+    },
+    reward : [pkmn.yveltal, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionZygarde50 = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.zygarde50,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.zygarde50,
+        slot1Moves : [move.thousandArrows.id,move.thousandArrows.id, move.dragonRush.id, move.fireBlast.id],
+    },
+    reward : [pkmn.zygarde50, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionCosmog = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.cosmog,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.cosmog,
+        slot1Moves : [move.iceBeam.id,move.futureSight.id, move.shadowBall.id, move.thunderbolt.id],
+    },
+    reward : [pkmn.cosmog, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionNecrozma = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.necrozma,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.necrozma,
+        slot1Moves : [move.ironTail.id,move.prismaticLaser.id, move.dragonRush.id, move.thunder.id],
+    },
+    reward : [pkmn.necrozma, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionZacian = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.zacian,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.zacian,
+        slot1Moves : [move.nightSlash.id,move.spiritBreak.id, move.ironHead.id, move.aquaTail.id],
+    },
+    reward : [pkmn.zacian, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionZamazenta = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.zamazenta,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.zamazenta,
+        slot1Moves : [move.thunder.id,move.skyUppercut.id, move.ironHead.id, move.spiritBreak.id],
+    },
+    reward : [pkmn.zamazenta, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionKubfu = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.kubfu,
+    tier: 1,
+    rotation: 2,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.kubfu,
+        slot1Moves : [move.bulkUp.id,move.lowSweep.id, move.poisonJab.id, move.icePunch.id],
+    },
+    reward : [pkmn.kubfu, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+
+
 
 
 // rotationDimensionMax 
@@ -6768,8 +6875,6 @@ for (const i in areas){
     }
 
 }
-
-
 
 
 

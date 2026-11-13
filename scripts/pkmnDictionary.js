@@ -14942,7 +14942,9 @@ pkmn.yveltal = {
         satk: 131,
         sdef: 98,
         spe: 99,
-    }
+    },
+    signature : move.oblivionWing,
+    hiddenAbility: ability.auraBreak,
 }
 
 // 718 Zygarde
@@ -14969,7 +14971,9 @@ pkmn.zygarde50 = {
         satk: 81,
         sdef: 95,
         spe: 95,
-    }
+    },
+    signature: move.thousandArrows,
+    hiddenAbility: ability.auraBreak,
 }
 
 pkmn.zygarde100 = {
@@ -16289,7 +16293,8 @@ pkmn.cosmog = {
     spe: 37,
   },
   evolve: function() { return { 1: { pkmn: pkmn.cosmoem, level: evolutionLevel3 } } },
-    eggMove : move.kinesis
+    eggMove : move.kinesis,
+    hiddenAbility: ability.adaptability,
 }
 
 pkmn.cosmoem = {
@@ -16302,6 +16307,7 @@ pkmn.cosmoem = {
     sdef: 161,
     spe: 37,
   },
+  evolve: function() { return { 1: { pkmn: pkmn.solgaleo, item: item.sunStone }, 2: { pkmn: pkmn.lunala, item: item.moonStone } } },
     eggMove : move.kinesis
 }
 
@@ -18104,7 +18110,8 @@ pkmn.kubfu = {
       1: { pkmn: pkmn.urshifuSingle, item: item.blackBelt },
       2: { pkmn: pkmn.urshifuRapid, item: item.waterStone },
     }
-  }
+  },
+  hiddenAbility: ability.ironFist,
 }
 
 pkmn.urshifuSingle = {

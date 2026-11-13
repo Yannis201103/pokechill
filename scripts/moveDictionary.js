@@ -1099,6 +1099,11 @@ ability.darkAura = {
     rarity: 3,
 }
 
+ability.auraBreak = {
+    info: function() {return `Negates the effects of Dark Aura and Fairy Aura`},
+    rarity: 3,
+}
+
 
 ability.soulAsterism = {
     info: function() {return `Multiplies by x1.1 the damage of Ghost-type moves of all team members`},
@@ -1905,6 +1910,13 @@ move.precipiceBlades = {
     info: function() {return `Attacks x1.2 slower than usual`},
 }
 
+move.thousandArrows = {
+    split: "physical",
+    rarity: 3,
+    type: "ground",
+    power: 90
+}
+
 move.dig = {
     moveset: [`ground`],
     split: "physical",
@@ -2205,6 +2217,14 @@ move.bleakwindStorm = {
     power: 100,
     info: function() {return `30% chance to decrease enemy Speed by 50%`},
     hitEffect: function(target) { if (rng(0.30)) moveBuff(target,'spedown1') },
+    affectedBy: [ability.windRider.id]
+}
+
+move.oblivionWing = {
+    split: "special",
+    rarity: 3,
+    type: "flying",
+    power: 80,
     affectedBy: [ability.windRider.id]
 }
 
