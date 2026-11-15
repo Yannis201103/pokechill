@@ -178,6 +178,7 @@ body {
 #explore-header{
     height: auto;
     width: 100%;
+    flex-shrink: 0;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
@@ -2235,14 +2236,14 @@ z-index: 0;
     align-items: center;
     animation: exploreTransition 1s 1;
     transform-origin: left;
-    transform:scaleX(0%);
+    transform:scaleX(0);
 }
 
 @keyframes exploreTransition{
-    0%{transform:scaleX(0%);transform-origin: left;}
-    50%{transform:scaleX(100%);transform-origin: left;}
-    51%{transform:scaleX(100%);transform-origin: right;}
-    100%{transform:scaleX(0%); transform-origin: right;}
+    0%{transform:scaleX(0);transform-origin: left;}
+    50%{transform:scaleX(1);transform-origin: left;}
+    51%{transform:scaleX(1);transform-origin: right;}
+    100%{transform:scaleX(0); transform-origin: right;}
 }
 
 #explore-transition svg{

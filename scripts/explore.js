@@ -67,6 +67,12 @@ function voidAnimation(divName, animationName) {
     element.style.animation = 'none';
     void element.offsetWidth;
     element.style.animation = `${animationName}`; 
+
+    if (divName === "explore-transition") {
+        element.onanimationend = event => {
+            if (event.target === element) element.style.display = "none";
+        };
+    }
 }
 
 function format(input) {
@@ -3935,6 +3941,9 @@ function exploreCombatWild() {
 }
 
 function initialiseArea(){
+
+    document.getElementById("content-explore").scrollTop = 0;
+    currentTrainerSlot = 1;
 
 
     zCrystalTurn = 0

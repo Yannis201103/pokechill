@@ -1911,6 +1911,7 @@ move.precipiceBlades = {
 }
 
 move.thousandArrows = {
+    moveset: [`ground`],
     split: "physical",
     rarity: 3,
     type: "ground",
@@ -2221,6 +2222,7 @@ move.bleakwindStorm = {
 }
 
 move.oblivionWing = {
+    moveset: [`flying`],
     split: "special",
     rarity: 3,
     type: "flying",
