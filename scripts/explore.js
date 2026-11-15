@@ -10267,14 +10267,16 @@ function updateMegaDimension(tier){
 
     updateEventCounters()
 
-
-    document.getElementById("dimension-listing").innerHTML = `
+    document.getElementById("dimension-menu-header").insertAdjacentHTML("beforeend", `
         <div class="explore-menu-selector dimension-tier-selector" id="dimension-tier-selector">
             <div class="dimension-tier-tab active" data-tier="1">Facile</div>
             <div class="dimension-tier-tab" data-tier="2">Moyen</div>
             <div class="dimension-tier-tab" data-tier="3">Difficile</div>
             <div class="dimension-tier-tab" data-tier="4">Impossible</div>
         </div>
+    `)
+
+    document.getElementById("dimension-listing").innerHTML = `
         <div id="dimension-tier-content"></div>
     `
 
