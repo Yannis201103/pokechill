@@ -4763,7 +4763,7 @@ function getSeed() {
     rotationEventCurrent = eventRotationOverride;
   }
   rotationFrontierCurrent = (period % rotationFrontierMax) + 1;
-  rotationDimensionCurrent = ((period + 7) % rotationDimensionMax) + 1;
+  rotationDimensionCurrent = ((period + 6) % rotationDimensionMax) + 1;
 
   return dayNumber;
 }

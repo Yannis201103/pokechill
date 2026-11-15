@@ -6391,6 +6391,19 @@ transform: translateY(-1rem);
     scale: 0.8;
 }
 
+@media (max-width: 1000px){
+    .dimension-pokemon-row{
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .dimension-pokemon-row .dimension-pokemon{
+        flex: 0 0 33.333%;
+        min-width: 0;
+        scale: 0.4;
+    }
+}
+
 #dimension-listing .explore-ticket div{
 
     background-image: url(img/bg/dimension1.png);
