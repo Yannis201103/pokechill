@@ -6318,11 +6318,18 @@ transform: translateY(-1rem);
 }
 
 @media (max-width: 1000px){
+    #dimension-menu-header{
+        height: auto;
+        min-height: 5rem;
+        margin-bottom: 1rem;
+    }
+
     .dimension-tier-selector{
         width: 100%;
         max-width: none;
         margin-left: 0;
-        transform: translateY(1.5rem);
+        transform: none;
+        z-index: 4;
     }
 }
 
