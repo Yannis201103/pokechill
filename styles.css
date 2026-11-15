@@ -6317,6 +6317,15 @@ transform: translateY(-1rem);
     overflow: hidden;
 }
 
+@media (max-width: 1000px){
+    .dimension-tier-selector{
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        transform: translateY(-0.75rem);
+    }
+}
+
 .dimension-tier-selector .dimension-tier-tab{
     flex: 1 1 0;
     width: auto;
