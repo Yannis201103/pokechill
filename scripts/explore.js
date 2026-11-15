@@ -4763,7 +4763,7 @@ function getSeed() {
     rotationEventCurrent = eventRotationOverride;
   }
   rotationFrontierCurrent = (period % rotationFrontierMax) + 1;
-  rotationDimensionCurrent = (period % rotationDimensionMax) + 1;
+  rotationDimensionCurrent = ((period + 7) % rotationDimensionMax) + 1;
 
   return dayNumber;
 }
@@ -10168,28 +10168,8 @@ saved.lastDimensionRotation = 1
 
 function assignMegaDimension(){
 
-
-
-    for (const i in areas){
-        if (areas[i].type != "dimensionBlueprint") continue
-
-        areas[`dimensionRaid`+areas[i].tier].difficulty = areas[i].difficulty
-        areas[`dimensionRaid`+areas[i].tier].level = areas[i].level
-        areas[`dimensionRaid`+areas[i].tier].team = areas[i].team
-        areas[`dimensionRaid`+areas[i].tier].reward = areas[i].reward
-        areas[`dimensionRaid`+areas[i].tier].icon = areas[i].icon
-
-         
-        areas[`dimensionRift`+areas[i].tier].fieldEffect = undefined
-        areas[`dimensionRaid`+areas[i].tier].fieldEffect = areas[i].fieldEffect
-        areas[`dimensionRaid`+areas[i].tier].skills = areas[i].skills
-
-    }
-
-
-
-    if (saved.lastDimensionRotation == rotationEventCurrent) return
-    if (saved.lastDimensionRotation != rotationEventCurrent) { saved.lastDimensionRotation = rotationEventCurrent }
+    if (saved.lastDimensionRotation == rotationDimensionCurrent) return
+    if (saved.lastDimensionRotation != rotationDimensionCurrent) { saved.lastDimensionRotation = rotationDimensionCurrent }
 
 
     item.megaShard.got = 0
@@ -10251,6 +10231,11 @@ function updateMegaDimension(tier){
 
     assignMegaDimension()
 
+    for (const areaId in areas) {
+        if (areas[areaId].dimensionBlueprintId) delete areas[areaId]
+    }
+
+
     areas.dimensionRift1.icon = arrayPick(areas.dimensionRift1.spawns.common)
     areas.dimensionRift2.icon = arrayPick(areas.dimensionRift2.spawns.common)
     areas.dimensionRift3.icon = arrayPick(areas.dimensionRift3.spawns.common)
@@ -10284,78 +10269,33 @@ function updateMegaDimension(tier){
 
 
     document.getElementById("dimension-listing").innerHTML = `
-    <span id="dimension-portal-wrapper" ></span>
+        <div class="explore-menu-selector dimension-tier-selector" id="dimension-tier-selector">
+            <div class="dimension-tier-tab active" data-tier="1">Facile</div>
+            <div class="dimension-tier-tab" data-tier="2">Moyen</div>
+            <div class="dimension-tier-tab" data-tier="3">Difficile</div>
+            <div class="dimension-tier-tab" data-tier="4">Impossible</div>
+        </div>
+        <div id="dimension-tier-content"></div>
     `
 
+    document.querySelectorAll(".dimension-tier-tab").forEach(tab => {
+        tab.addEventListener("click", () => updateMegaDimension(Number(tab.dataset.tier)))
+    })
 
-
-    for (const i in areas){
-        if (areas[i].type != "dimensionBlueprint") continue
-        if (areas[i].rotation != rotationDimensionCurrent) continue 
-
-
-        const div = document.createElement("div")
-        div.dataset.pkmn = areas[i].icon.id
-
-        div.className = "dimension-pokemon"
-
-        let dimensionIndicator = `<div style="filter:hue-rotate(100deg)" id="dimension-indicator">★</div>`
-        if (areas[i].tier == 2) dimensionIndicator = `<div style="filter:hue-rotate(0deg)" id="dimension-indicator">★★</div>`
-        if (areas[i].tier == 3) dimensionIndicator = `<div style="filter:hue-rotate(200deg)" id="dimension-indicator">★★★</div>`
-        if (areas[i].tier == 4) dimensionIndicator = `<div style="filter:hue-rotate(300deg)" id="dimension-indicator">★★★★</div>`
-
-
-        div.innerHTML = `
-        
-            ${dimensionIndicator}
-            <img class="dimension-bhole" style="animation: rotate 20s infinite linear reverse; scale: 1.3;" src="img/icons/bhole.png">
-            <img class="dimension-bhole" src="img/icons/bhole.png">
-            <img class="dimension-sprite sprite-trim" src="img/pkmn/sprite/${areas[i].icon.id}.png">
-            `
-
-        document.getElementById("dimension-portal-wrapper").appendChild(div);
-
-
-
-        div.addEventListener("click", e => { 
-
-            updateMegaDimension(areas[i].tier)
-
-
-
-        })
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
+    updateMegaDimension(1)
+    return
 
     } else { // update the areas on themselves
 
 
-    document.getElementById("dimension-listing").innerHTML = ""
+    document.getElementById("dimension-tier-content").innerHTML = ""
+    document.querySelectorAll(".dimension-tier-tab").forEach(tab => {
+        tab.classList.toggle("active", Number(tab.dataset.tier) == tier)
+    })
 
 
-
-
+    const dimensionPokemonRow = document.createElement("div")
+    dimensionPokemonRow.className = "dimension-pokemon-row"
 
 
         for (const i in areas){
@@ -10396,24 +10336,47 @@ function updateMegaDimension(tier){
             <img class="dimension-sprite sprite-trim" src="img/pkmn/sprite/${areas[i].icon.id}.png">
             `
 
-        document.getElementById("dimension-listing").appendChild(div);
+        dimensionPokemonRow.appendChild(div);
 
 
         }
 
-
-    document.getElementById("dimension-listing").innerHTML += `<div class="dimension-return" onclick="updateMegaDimension()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs><mask id="SVGt9zVddCE"><path fill="#555555" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="M44 40.836q-7.34-8.96-13.036-10.168t-10.846-.365V41L4 23.545L20.118 7v10.167q9.523.075 16.192 6.833q6.668 6.758 7.69 16.836Z" clip-rule="evenodd"/></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGt9zVddCE)"/></svg>
-    Go Back
-    </div>`
+    if (dimensionPokemonRow.childElementCount > 0) {
+        document.getElementById("dimension-tier-content").appendChild(dimensionPokemonRow)
+    }
 
 
+    const dimensionBosses = []
+    for (const areaId in areas) {
+        if (areas[areaId].type != "dimensionBlueprint") continue
+        if (areas[areaId].rotation != rotationDimensionCurrent || areas[areaId].tier != tier) continue
+        dimensionBosses.push(areaId)
+    }
+
+    for (const blueprintId of dimensionBosses) {
+        const blueprint = areas[blueprintId]
+        areas[`${blueprintId}Raid`] = {
+            ...areas[`dimensionRaid${tier}`],
+            name: `${format(blueprint.icon.id)} Wormhole`,
+            difficulty: blueprint.difficulty,
+            level: blueprint.level,
+            team: blueprint.team,
+            reward: blueprint.reward,
+            icon: blueprint.icon,
+            fieldEffect: blueprint.fieldEffect,
+            skills: blueprint.skills,
+            dimensionBlueprintId: blueprintId,
+        }
+    }
 
 
+    const dimensionTicketList = document.createElement("div")
+    dimensionTicketList.className = "dimension-ticket-list"
 
     for (const i in areas){
         if (areas[i].type != "dimension") continue
         if (areas[i].tier != tier) continue
+        if (i == `dimensionRaid${tier}`) continue
 
 
 
@@ -10455,7 +10418,7 @@ function updateMegaDimension(tier){
     
 
 
-        document.getElementById("dimension-listing").appendChild(divAreas);
+        dimensionTicketList.appendChild(divAreas);
 
 
     if ( areas[i].unlockRequirement == undefined || areas[i].unlockRequirement() ) {
@@ -10472,9 +10435,15 @@ function updateMegaDimension(tier){
 
         })
         }
+    }
 
+    document.getElementById("dimension-tier-content").appendChild(dimensionTicketList)
 
-        
+    if (dimensionBosses.length == 0) {
+        const emptyMessage = document.createElement("div")
+        emptyMessage.className = "dimension-tier-empty"
+        emptyMessage.textContent = "No Pokémon are available in this level for the current rotation."
+        document.getElementById("dimension-tier-content").appendChild(emptyMessage)
     }
 
 

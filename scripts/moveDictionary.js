@@ -4756,6 +4756,20 @@ move.heatCrash = {
     unaffectedBy: [ability.sheerForce.id],
 }
 
+move.nitroCrash = {
+    rename: "Nitro Crash",
+    split: "physical",
+    type: "fire",
+    power: demeritBp+30,
+}
+
+move.turboVolt = {
+    rename: "Turbo Volt",
+    split: "special",
+    type: "electric",
+    power: demeritBp+30,
+}
+
 move.chatter = {
     split: "special",
     type: "flying",

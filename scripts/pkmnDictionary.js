@@ -18233,6 +18233,7 @@ pkmn.glastrier = {
     sdef: 110,
     spe: 30,
   },
+  hiddenAbility: ability.iceBody,
 }
 
 // 897 Spectrier
@@ -18259,6 +18260,7 @@ pkmn.calyrex = {
     sdef: 80,
     spe: 80,
   },
+  hiddenAbility: ability.magicGuard,
 }
 
 pkmn.calyrexIce = {
@@ -19864,7 +19866,9 @@ pkmn.koraidon = {
     satk: 40,
     sdef: 95,
     spe: 155,
-  }
+  },
+  hiddenAbility: ability.rivalry,
+  signature: move.nitroCrash,
 }
 
 // 1008 Miraidon
@@ -19877,7 +19881,9 @@ pkmn.miraidon = {
     satk: 135,
     sdef: 75,
     spe: 155,
-  }
+  },
+  signature: move.turboVolt,
+  hiddenAbility: ability.rivalry,
 }
 
 // 1009 Walking Wake

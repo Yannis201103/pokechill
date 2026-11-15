@@ -5842,7 +5842,7 @@ areas.frontierBattleFactory = {
 
 
 
-let rotationDimensionMax = 2;
+let rotationDimensionMax = 9;
 
 
 
@@ -6093,13 +6093,11 @@ areas.dimensionMegaRayquaza = {
     skills : {3 : skill.omniboost.id, 2 : skill.suddenDeath.id, 1 : skill.demoralisingRoar.id}
 }
 
-//rotation 2
-
 areas.dimensionDialga = {
     type: `dimensionBlueprint`,
     icon: pkmn.dialga,
     tier: 1,
-    rotation: 2,
+    rotation: 1,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6115,7 +6113,7 @@ areas.dimensionGengarGmax = {
     type: `dimensionBlueprint`,
     icon: pkmn.gengarGmax,
     tier: 2,
-    rotation: 3,
+    rotation: 2,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6130,7 +6128,7 @@ areas.dimensionKyuremBlack = {
     type: `dimensionBlueprint`,
     icon: pkmn.kyuremBlack,
     tier: 3,
-    rotation: 4,
+    rotation: 10,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6142,13 +6140,13 @@ areas.dimensionKyuremBlack = {
     skills : {3 : skill.ironWill.id, 2 : skill.suddenDeath.id, 1 : skill.demoralisingRoar.id}
 }
 
-//rotation 3
+//rotation 10
 
 areas.dimensionMewtwo = {
     type: `dimensionBlueprint`,
     icon: pkmn.mewtwo,
     tier: 1,
-    rotation: 2,
+    rotation: 10,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6159,7 +6157,7 @@ areas.dimensionMewtwo = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
-//rotation 4
+//rotation 2
 
 areas.dimensionLugia = {
     type: `dimensionBlueprint`,
@@ -6191,11 +6189,13 @@ areas.dimensionHoOh = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 3
+
 areas.dimensionLatias = {
     type: `dimensionBlueprint`,
     icon: pkmn.latias,
     tier: 1,
-    rotation: 2,
+    rotation: 3,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6210,7 +6210,7 @@ areas.dimensionLatios = {
     type: `dimensionBlueprint`,
     icon: pkmn.latios,
     tier: 1,
-    rotation: 2,
+    rotation: 3,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6221,11 +6221,13 @@ areas.dimensionLatios = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 4
+
 areas.dimensionKyogre = {
     type: `dimensionBlueprint`,
     icon: pkmn.kyogre,
     tier: 1,
-    rotation: 2,
+    rotation: 4,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6240,7 +6242,7 @@ areas.dimensionGroudon = {
     type: `dimensionBlueprint`,
     icon: pkmn.groudon,
     tier: 1,
-    rotation: 2,
+    rotation: 4,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6255,7 +6257,7 @@ areas.dimensionRayquaza = {
     type: `dimensionBlueprint`,
     icon: pkmn.rayquaza,
     tier: 1,
-    rotation: 2,
+    rotation: 4,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6270,7 +6272,7 @@ areas.dimensionGiratina = {
     type: `dimensionBlueprint`,
     icon: pkmn.giratina,
     tier: 1,
-    rotation: 2,
+    rotation: 1,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6281,11 +6283,13 @@ areas.dimensionGiratina = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 10
+
 areas.dimensionRegigigas = {
     type: `dimensionBlueprint`,
     icon: pkmn.regigigas,
     tier: 1,
-    rotation: 2,
+    rotation: 10,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6296,11 +6300,13 @@ areas.dimensionRegigigas = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 5
+
 areas.dimensionCobalion = {
     type: `dimensionBlueprint`,
     icon: pkmn.cobalion,
     tier: 1,
-    rotation: 2,
+    rotation: 5,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6315,7 +6321,7 @@ areas.dimensionTerrakion = {
     type: `dimensionBlueprint`,
     icon: pkmn.terrakion,
     tier: 1,
-    rotation: 2,
+    rotation: 5,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6330,7 +6336,7 @@ areas.dimensionVirizion = {
     type: `dimensionBlueprint`,
     icon: pkmn.virizion,
     tier: 1,
-    rotation: 2,
+    rotation: 5,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6341,11 +6347,13 @@ areas.dimensionVirizion = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 6
+
 areas.dimensionTornadus = {
     type: `dimensionBlueprint`,
     icon: pkmn.tornadus,
     tier: 1,
-    rotation: 2,
+    rotation: 6,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6360,7 +6368,7 @@ areas.dimensionThundurus = {
     type: `dimensionBlueprint`,
     icon: pkmn.thundurus,
     tier: 1,
-    rotation: 2,
+    rotation: 6,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6375,7 +6383,7 @@ areas.dimensionLandorus = {
     type: `dimensionBlueprint`,
     icon: pkmn.landorus,
     tier: 1,
-    rotation: 2,
+    rotation: 6,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6386,11 +6394,13 @@ areas.dimensionLandorus = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 7
+
 areas.dimensionReshiram = {
     type: `dimensionBlueprint`,
     icon: pkmn.reshiram,
     tier: 1,
-    rotation: 2,
+    rotation: 7,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6405,7 +6415,7 @@ areas.dimensionZekrom = {
     type: `dimensionBlueprint`,
     icon: pkmn.zekrom,
     tier: 1,
-    rotation: 2,
+    rotation: 7,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6420,7 +6430,7 @@ areas.dimensionKyurem = {
     type: `dimensionBlueprint`,
     icon: pkmn.kyurem,
     tier: 1,
-    rotation: 2,
+    rotation: 7,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6431,11 +6441,13 @@ areas.dimensionKyurem = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 8
+
 areas.dimensionXerneas = {
     type: `dimensionBlueprint`,
     icon: pkmn.xerneas,
     tier: 1,
-    rotation: 2,
+    rotation: 8,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6450,7 +6462,7 @@ areas.dimensionYveltal = {
     type: `dimensionBlueprint`,
     icon: pkmn.yveltal,
     tier: 1,
-    rotation: 2,
+    rotation: 8,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6465,7 +6477,7 @@ areas.dimensionZygarde50 = {
     type: `dimensionBlueprint`,
     icon: pkmn.zygarde50,
     tier: 1,
-    rotation: 2,
+    rotation: 8,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6476,11 +6488,13 @@ areas.dimensionZygarde50 = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 10
+
 areas.dimensionCosmog = {
     type: `dimensionBlueprint`,
     icon: pkmn.cosmog,
     tier: 1,
-    rotation: 2,
+    rotation: 10,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6495,7 +6509,7 @@ areas.dimensionNecrozma = {
     type: `dimensionBlueprint`,
     icon: pkmn.necrozma,
     tier: 1,
-    rotation: 2,
+    rotation: 10,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6506,11 +6520,13 @@ areas.dimensionNecrozma = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 9
+
 areas.dimensionZacian = {
     type: `dimensionBlueprint`,
     icon: pkmn.zacian,
     tier: 1,
-    rotation: 2,
+    rotation: 9,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6525,7 +6541,7 @@ areas.dimensionZamazenta = {
     type: `dimensionBlueprint`,
     icon: pkmn.zamazenta,
     tier: 1,
-    rotation: 2,
+    rotation: 9,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6536,11 +6552,13 @@ areas.dimensionZamazenta = {
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
+//rotation 9
+
 areas.dimensionKubfu = {
     type: `dimensionBlueprint`,
     icon: pkmn.kubfu,
     tier: 1,
-    rotation: 2,
+    rotation: 9,
     difficulty: tier4difficulty,
     level : 100,
     team : {
@@ -6548,6 +6566,55 @@ areas.dimensionKubfu = {
         slot1Moves : [move.bulkUp.id,move.lowSweep.id, move.poisonJab.id, move.icePunch.id],
     },
     reward : [pkmn.kubfu, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+//rotation 6
+
+areas.dimensionEnamorus = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.enamorus,
+    tier: 1,
+    rotation: 6,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.enamorus,
+        slot1Moves : [move.ironTail.id,move.moonblast.id, move.hurricane.id, move.bugBuzz.id],
+    },
+    reward : [pkmn.enamorus, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+//rotation 10
+
+areas.dimensionKoraidon = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.koraidon,
+    tier: 1,
+    rotation: 10,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.koraidon,
+        slot1Moves : [move.nitroCrash.id,move.dragonRush.id, move.focusBlast.id, move.fly.id],
+    },
+    reward : [pkmn.koraidon, item.whiteApricorn],
+    fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
+}
+
+areas.dimensionMiraidon = {
+    type: `dimensionBlueprint`,
+    icon: pkmn.miraidon,
+    tier: 1,
+    rotation: 10,
+    difficulty: tier4difficulty,
+    level : 100,
+    team : {
+        slot1 : pkmn.miraidon,
+        slot1Moves : [move.nitroCrash.id,move.turboVolt.id, move.focusBlast.id, move.fly.id],
+    },
+    reward : [pkmn.miraidon, item.whiteApricorn],
     fieldEffect : [field.noMercy.id, field.stealthRocks.id, field.reverseField.id]
 }
 
